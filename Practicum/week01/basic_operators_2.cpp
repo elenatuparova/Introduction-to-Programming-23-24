@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    int a;          // This could be an `unsigned int`, too
+    int a; // This could be an `unsigned int`, too
     std::cin >> a;
 
     std::cout << "square: ";
