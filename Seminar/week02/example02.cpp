@@ -6,7 +6,7 @@ int main() {
 
 	std::cin >> height >> width;
 
-	if (height < 0 || width < 0) {
+	if (height <= 0 || width <= 0) {
 		std::cout << "invalid input" << std::endl;
 		return 1;
 	}
