@@ -33,10 +33,17 @@ int convertCharToNum(char ch) {
 	if (ch >= 'A' && ch <= 'F') {
 		return ch - 'A' + 10;
 	}
+    return -1;
 }
 
 char convertNumToChar(int num) {
-	// TO-DO
+    if (num >= 0 && num <= 9) {
+        return num + '0';
+    }
+    if (num >= 10) {
+        return (num - 10) + 'A';
+	}
+    return 0;
 }
 
 unsigned int fromRandomToDecimal(const char kNum[], int size, int k) {
@@ -52,7 +59,17 @@ unsigned int fromRandomToDecimal(const char kNum[], int size, int k) {
 }
 
 void fromDecimalToRandom(unsigned decimalNum, char kNum[], int size, int k) {
-	// TO-DO
+    for (int i = size - 1; i >= 0; i--) {
+        int num = decimalNum % k;
+        char current = getSymbolFromIndex(num);
+        kNum[i] = current;
+        decimalNum /= k;
+    }
+}
+
+void fromRandomToRandom(const char from[], int fromSize, int k, char to[], int toSize, int n) {
+    unsigned int decimalNum = fromRandomToDecimal(from, fromSize, k);
+    fromDecimalToRandom(decimalNum, to, toSize, n);
 }
 
 
