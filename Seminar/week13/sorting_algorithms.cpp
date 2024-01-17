@@ -62,11 +62,3 @@ void insertionSort(int* arr, int size) {
 		insert(arr, i);
 	}
 }
-
-int main() { 
-	int arr[] = {2, 6, 7, 1, 3, 1, 10};
-    insertionSort(arr, 7);
-    for (int i = 0; i < 7; i++) {
-        std::cout << arr[i] << " ";
-	}
-}
